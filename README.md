@@ -17,10 +17,42 @@ The server binds to a specified port (default 8080) and waits for incoming conne
 3. Run the file with `bash http-server.sh`.
 4. Check if the server is reachable on the specified port (default 8080) by accessing `http://localhost:8080` in your browser.
 
+## Testing the Server with cURL 🚀
+
+To test if the HTTP server is functioning correctly, you can use curl, a command-line tool for transferring data using various protocols, including HTTP. Here's how you can use curl to test the server:
+
+Open a terminal or command prompt window.
+Run the following command, replacing <port> with the port number that the server is running on (default 8080):
+``````
+curl http://localhost:<port>
+``````
+
+This should return the contents of the default index file, if one exists, served by the HTTP server. You can also test accessing a specific file by appending its path to the URL, for example:
+``````
+curl http://localhost:<port>/example.html
+``````
+This should return the contents of the example.html file, if it exists and is served by the HTTP server. 
+
+If the server is running and serving files correctly, you should receive a response similar to the following:
+``````
+HTTP/1.1 200 OK
+Content-Type: text/html
+
+<html>
+<head>
+  <title>Example Page</title>
+</head>
+<body>
+  <h1>Hello, World!</h1>
+</body>
+</html>
+``````
+This response shows that the HTTP request was successful (HTTP status code 200 OK) and that the response is in HTML format. The contents of the file being served are displayed below the header.
+
+
 ## Configuration 🔧
 
 You can change the port and the directory where the static HTML files are stored by editing the following variables at the beginning of the script:
-
 ``````
 PORT=8080
 DIR=/var/www/html
