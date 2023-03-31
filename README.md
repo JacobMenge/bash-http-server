@@ -1,11 +1,11 @@
 <h1 align="center">
  🔥 Simple and Efficient HTTP Server in Bash 🔥
 </h1>
-
 <p align="center">
 This script implements a simple HTTP server in Bash. The server uses `nc` (Netcat) as the network backend and can serve static HTML files to clients.
 </p>
-  
+  </br>
+
 ## Functionality 🚀
 
 The server binds to a specified port (default 8080) and waits for incoming connections. When a client sends a request, it is processed by the `handle_request` function. This function extracts the path from the request and checks if the requested file is present and readable in the specified directory (default `/var/www/html`). If the file is present, its contents are sent to the client, otherwise a 404 Not Found response is sent.
